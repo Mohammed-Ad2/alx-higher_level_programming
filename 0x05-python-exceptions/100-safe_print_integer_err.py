@@ -18,5 +18,5 @@ def safe_print_integer_err(value):
 		print("{:d}".format(value))
 		return True
 	except (TypeError, ValueError):
-		sys.stderr.write("Exception: Unknown format code 'd' for object of type 'str'\n")
+		print("Exception: {}".format(sys.exc_info()[1]), file=sys.stderr)
 		return False
